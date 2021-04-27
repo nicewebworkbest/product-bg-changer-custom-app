@@ -8,7 +8,7 @@ const {
 
 const mongoose = require('mongoose');
 const initDB = () => {
-	mongoose.connect(DB_CONNECTION_STRING);
+	mongoose.connect(DB_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
 	mongoose.connection.once('open', () => {
 		console.log('connected to database');
 	});
